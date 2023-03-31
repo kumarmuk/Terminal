@@ -16,6 +16,8 @@ public class TerminalConfig {
     private static String serialNumber;
     private static String terminalModel;
     private static String softwareVersion;
+    private static double latitude;
+    private static double longitude;  
     private static final String fileLocation = "terminal.config";
     private static Properties terminalProperties = new Properties();
 
@@ -41,6 +43,8 @@ static  {
         serialNumber = terminalProperties.getProperty("terminal.serial.number");
         terminalModel = terminalProperties.getProperty("terminal.model");
         softwareVersion = terminalProperties.getProperty("terminal.software.version");
+        latitude = Double.parseDouble(terminalProperties.getProperty("terminal.latitude"));
+        longitude = Double.parseDouble(terminalProperties.getProperty("terminal.longitude"));
     }
 
     public static String getSerialNumber() {
@@ -55,5 +59,12 @@ static  {
         return softwareVersion;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
 
 }
